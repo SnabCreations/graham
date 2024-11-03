@@ -1,0 +1,525 @@
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('../fonts/PlusJakartaSans-ExtraBold.woff2') format('woff2'),
+    url('../fonts/PlusJakartaSans-ExtraBold.woff') format('woff'),
+    url('../fonts/PlusJakartaSans-ExtraBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('../fonts/PlusJakartaSans-Bold.woff2') format('woff2'),
+    url('../fonts/PlusJakartaSans-Bold.woff') format('woff'),
+    url('../fonts/PlusJakartaSans-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('../fonts/PlusJakartaSans-Light.woff2') format('woff2'),
+    url('../fonts/PlusJakartaSans-Light.woff') format('woff'),
+    url('../fonts/PlusJakartaSans-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('../fonts/PlusJakartaSans-Regular.woff2') format('woff2'),
+    url('../fonts/PlusJakartaSans-Regular.woff') format('woff'),
+    url('../fonts/PlusJakartaSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('../fonts/PlusJakartaSans-Medium.ttf') format('woff2'),
+    url('../fonts/PlusJakartaSans-Medium.woff') format('woff'),
+    url('../fonts/PlusJakartaSans-Medium.woff2') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('../fonts/PlusJakartaSans-SemiBold.woff2') format('woff2'),
+    url('../fonts/PlusJakartaSans-SemiBold.woff') format('woff'),
+    url('../fonts/PlusJakartaSans-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+a {
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+p {
+  font-family: 'Plus Jakarta Sans';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 14px;
+  color: #20304A;
+}
+
+/*--------------------------------------------------------------
+# Global Header
+--------------------------------------------------------------*/
+.header {
+  color: var(--default-color);
+  transition: all 0.5s;
+  z-index: 997;
+  background-color: var(--background-color);
+}
+
+.header .topbar {
+  background-color: #008374;
+  height: 40px;
+  padding: 0;
+  font-size: 14px;
+  transition: all 0.5s;
+}
+
+.header .topbar .contact-info i {
+  font-style: normal;
+  color: #fff;
+}
+
+.header .topbar .contact-info-2 i {
+  font-style: normal;
+  color: #fff;
+}
+
+.header .topbar .contact-info i a,
+.header .topbar .contact-info i span {
+  padding-left: 5px;
+  color: var(--contrast-color);
+}
+
+@media (max-width: 575px) {
+
+  .header .topbar .contact-info i a,
+  .header .topbar .contact-info i span {
+    font-size: 13px;
+  }
+}
+
+.header .topbar .contact-info i a {
+  line-height: 0;
+  transition: 0.3s;
+}
+
+.header .topbar .contact-info i a:hover {
+  color: var(--contrast-color);
+  text-decoration: underline;
+}
+
+.header .topbar .social-links a {
+  color: #fff;
+  line-height: 0;
+  transition: 0.3s;
+  margin-left: 20px;
+}
+
+.header .topbar .social-links a:hover {
+  color: var(--contrast-color);
+}
+
+.header .branding {
+  min-height: 60px;
+  padding: 10px 0;
+}
+
+.header .logo {
+  line-height: 1;
+}
+
+.header .logo img {
+  max-height: 36px;
+  margin-right: 8px;
+}
+
+.header .logo h1 {
+  font-size: 30px;
+  margin: 0;
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+.header .logo span {
+  font-size: 32px;
+  margin-left: 2px;
+  color: var(--nav-hover-color);
+}
+
+.scrolled .header {
+  box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
+}
+
+/*--------------------------------------------------------------
+  # Navigation Menu
+  --------------------------------------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+}
+
+/* Initial style */
+.branding {
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+/* Style when scrolled */
+.branding.scrolled {
+  background-color: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.menu {
+  display: block;
+  position: relative;
+  top: 0;
+  right: 0;
+  padding: 20px;
+  color: black;
+  z-index: 9;
+  cursor: pointer;
+}
+
+.navigation {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: 8;
+  transform: scaleY(0);
+  background: #f44336;
+  transform-origin: top;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: all 0.2s cubic-bezier(0, 0.32, 0.36, 0.97);
+}
+
+.navigator {
+  margin: 10px;
+  background: transparent;
+  color: #fff;
+  font-weight: 900;
+  letter-spacing: 1px;
+  font-size: 34px;
+  box-shadow: inset 0 0 5px 0px #f44336;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  opacity: 0;
+  transition: all 1s linear;
+}
+
+.navigation.open {
+  transform: scaleY(1);
+}
+
+.navigation.open .navigator {
+  transform: scaleY(1);
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+  # Header Banner
+--------------------------------------------------------------*/
+
+.header-banner {
+  position: relative;
+  top: 10em;
+}
+
+.header-banner .carousel-item {
+  position: relative;
+}
+
+.header-banner .carousel-item .header-banner-text {
+  position: absolute;
+  bottom: 50px;
+  left: 15%;
+  color: #fff;
+}
+
+.header-banner .carousel-item .header-banner-text h2 {
+  font-family: 'Plus Jakarta Sans';
+  font-weight: 500;
+  font-style: normal;
+}
+
+.header-banner .carousel-item .header-banner-text .btn {
+  background-color: #595CFF;
+  color: #fff;
+}
+
+.header-banner .carousel-item .header-banner-text .btn:hover {
+  background-color: #2527b3;
+  color: #fff;
+}
+
+.header-banner img {
+  border-radius: 10px;
+}
+
+.header-banner .carousel-indicators {
+  right: 50em;
+}
+
+.header-banner .carousel-indicators [data-bs-target] {
+  width: 20px;
+  height: 10px;
+  border-radius: 10px;
+}
+
+.banner-title img {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.banner-title-card {
+  position: relative;
+}
+
+.banner-title-card-info {
+  position: absolute;
+  bottom: 20px;
+  left: 50px;
+}
+
+.banner-title-card-info h2 {
+  font-family: 'Plus Jakarta Sans';
+  font-weight: 500;
+  font-style: normal;
+}
+
+.banner-title-card-info .btn {
+  background-color: #595CFF;
+  color: #fff;
+}
+
+.banner-title-card-info .btn:hover {
+  background-color: #2527b3;
+  color: #fff;
+}
+
+/*==============
+ Products & Services 
+ =============*/
+.product-slide {
+  margin-top: 200px;
+  padding: 40px 0px;
+}
+
+.product-slide .element {
+  text-align: center;
+}
+
+.product-slide .element img {
+  margin: auto;
+}
+
+.product-slide .element h4 {
+  color: black;
+  font-family: 'Plus Jakarta Sans';
+  font-weight: 500;
+  font-style: normal;
+  font-size: 17px;
+}
+
+.product-slide .element h3 {
+  color: black;
+}
+
+.product-slide .slick-prev,
+.slick-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: #333;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.product-slide .slick-prev {
+  left: 0;
+}
+
+.product-slide .slick-next {
+  right: 0;
+}
+
+.product-slide .slick-prev:hover,
+.slick-next:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+.product-slide .slick-dots {
+  display: none !important;
+}
+
+
+/*==============
+ New arrival Content 
+ =============*/
+
+.new-arrival-slide {
+  padding: 40px 0px;
+}
+
+.new-arrival-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.new-arrival-slide .arrival-content {
+  text-align: center;
+}
+
+.new-arrival-slide .arrival-content img {
+  margin: auto;
+}
+
+.new-arrival-slide .slick-dots {
+  display: none !important;
+}
+
+/* Align heading and arrows */
+.new-arrival .header-with-arrows {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.new-arrival .slider-arrows {
+  display: flex;
+  gap: 10px;
+}
+
+.new-arrival .prev-arrow,
+.new-arrival .next-arrow {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+.new-arrival .prev-arrow:hover,
+.new-arrival .next-arrow:hover {
+  color: #000;
+  /* Customize hover effect */
+}
+
+/*==============
+ customer-service
+ =============*/
+
+.customer-service .row {
+  padding: 40px 0px;
+}
+.customer-service-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.customer-service-header p {
+  position: relative; 
+}
+
+.customer-service-header p::before {
+  content: ""; 
+  position: absolute;
+  left: -20px;
+  top: 0; 
+  height: 70%; 
+  border-left: 2px solid #20304A; 
+}
+
+
+
+/*==============
+ Popular collections 
+ =============*/
+
+ .collection-slide-slide {
+  padding: 40px 0px;
+}
+
+.new-arrival-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.collection-slide .collection-content {
+  text-align: center;
+}
+
+.collection-slide .collection-content img {
+  margin: auto;
+}
+
+.collection-slide .slick-dots {
+  display: none !important;
+}
+
+/* Align heading and arrows */
+.collection-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.collection-header .slider-arrows {
+  display: flex;
+  gap: 10px;
+}
+
+.collection .prev-arrow,
+.collection .next-arrow {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+.collection .prev-arrow:hover,
+.collection .next-arrow:hover {
+  color: #000;
+  /* Customize hover effect */
+}
